@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chakrabarti Medical Store | Chittaranjan Park, New Delhi</title>
+  <meta name="description" content="Chakrabarti Medical Store - All types of medicines, home delivery in CR Park & GK 2, BP/Sugar check. Shop-8, Market-3, Chittaranjan Park, New Delhi 110019." />
+
+  <style>
+    :root{
+      --primary:#0ea5e9;
+      --dark:#0f172a;
+      --text:#334155;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --border:#e2e8f0;
+      --success:#22c55e;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body{ background:var(--bg); color:var(--text); }
+
+    header{
+      background: linear-gradient(135deg, var(--primary), #38bdf8);
+      color:white;
+      padding: 28px 16px;
+      text-align:center;
+    }
+
+    header h1{ font-size: 28px; letter-spacing:0.5px; }
+    header p{ margin-top:8px; font-size: 15px; opacity:0.95; }
+
+    nav{
+      background: white;
+      border-bottom:1px solid var(--border);
+      position: sticky;
+      top:0;
+      z-index: 50;
+    }
+    nav .wrap{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 16px;
+      gap:12px;
+      flex-wrap: wrap;
+    }
+    nav a{
+      text-decoration:none;
+      color:var(--dark);
+      font-weight:600;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:10px;
+    }
+    nav a:hover{ background:#eef6ff; }
+
+    .container{
+      max-width:1100px;
+      margin: 18px auto;
+      padding: 0 16px 30px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap:16px;
+      margin-top: 18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px;
+      box-shadow: 0 8px 18px rgba(15,23,42,0.06);
+    }
+
+    .hero h2{
+      font-size: 22px;
+      color:var(--dark);
+    }
+    .hero p{ margin-top:10px; line-height:1.6; }
+
+    .badges{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .badge{
+      background:#e0f2fe;
+      color:#075985;
+      font-weight:700;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      border:1px solid #bae6fd;
+    }
+
+    .btns{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      margin-top:16px;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:14px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+    .btn.primary{ background:var(--primary); color:white; }
+    .btn.primary:hover{ filter:brightness(0.95); }
+
+    .btn.whatsapp{ background: var(--success); color:white; }
+    .btn.whatsapp:hover{ filter:brightness(0.95); }
+
+    .btn.outline{
+      background:white;
+      border:1px solid var(--border);
+      color:var(--dark);
+    }
+    .btn.outline:hover{ background:#f1f5f9; }
+
+    .mini{
+      display:grid;
+      gap:12px;
+    }
+
+    .info{
+      display:grid;
+      gap:8px;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .section{
+      margin-top:18px;
+    }
+
+    .section h3{
+      font-size:18px;
+      color:var(--dark);
+      margin-bottom:10px;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+
+    .service{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px;
+    }
+    .service h4{ color:var(--dark); font-size:16px; }
+    .service p{ margin-top:6px; font-size:14px; line-height:1.5; }
+
+    /* HOME DELIVERY BANNER */
+    .delivery-banner{
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 22px rgba(34,197,94,0.25);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .delivery-banner h3{
+      margin:0;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .delivery-banner p{
+      margin-top:6px;
+      font-size:14px;
+      opacity:0.95;
+      line-height:1.5;
+    }
+
+    .delivery-banner .left{
+      max-width: 680px;
+    }
+
+    .delivery-banner .right{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+    }
+
+    .mapbox iframe{
+      width:100%;
+      height:330px;
+      border:0;
+      border-radius:18px;
+    }
+
+    footer{
+      text-align:center;
+      padding:18px 12px;
+      color:#64748b;
+      font-size:13px;
+    }
+
+    /* Floating buttons */
+    .floating{
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      display:flex;
+      flex-direction: column;
+      gap:10px;
+      z-index: 99;
+    }
+    .float-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      text-decoration:none;
+      color:white;
+      font-weight:900;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.20);
+    }
+    .float-btn.call{ background: var(--primary); }
+    .float-btn.wa{ background: var(--success); }
+
+    @media (max-width: 850px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      header h1{ font-size: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header id="home">
+  <h1>CHAKRABARTI MEDICAL STORE</h1>
+  <p>All Types of Medicines • Home Delivery (CR Park & GK 2) • BP / Sugar Check</p>
+</header>
+
+<nav>
+  <div class="wrap">
+    <div style="font-weight:900; color:#0f172a;">Chakrabarti Medical</div>
+    <div style="display:flex; gap:6px; flex-wrap:wrap;">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#timing">Timing</a>
+      <a href="#contact">Contact</a>
+      <a href="#map">Map</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="card">
+      <h2>Your Trusted Medical Store in CR Park, New Delhi</h2>
+      <p>
+        Welcome to <b>Chakrabarti Medical Store</b>. We provide <b>all types of medicines</b>,
+        genuine products, and quick support for your daily healthcare needs.
+        We also provide <b>home delivery in CR Park & GK 2</b> and <b>BP / Sugar Check</b>.
+      </p>
+
+      <div class="badges">
+        <span class="badge">All Medicines Available</span>
+        <span class="badge">Home Delivery</span>
+        <span class="badge">BP / Sugar Check</span>
+        <span class="badge">CR Park • GK 2</span>
+      </div>
+
+      <div class="btns">
+        <a class="btn whatsapp" target="_blank"
+           href="https://wa.me/919999007926?text=Hello%20Chakrabarti%20Medical%20Store,%20I%20want%20to%20order%20medicines.%20Please%20guide%20me.">
+          ✅ WhatsApp Order (9999007926)
+        </a>
+
+        <a class="btn whatsapp" target="_blank"
+           href="https://wa.me/919818273711?text=Hello%20Chakrabarti%20Medical%20Store,%20I%20want%20to%20order%20medicines.%20Please%20guide%20me.">
+          ✅ WhatsApp Order (9818273711)
+        </a>
+
+        <a class="btn primary" href="tel:+919999007926">📞 Call (9999007926)</a>
+        <a class="btn primary" href="tel:+919818273711">📞 Call (9818273711)</a>
+
+        <a class="btn outline" target="_blank" href="https://share.google/xbog5e5LJSXC02SDB">
+          📍 Open in Google Maps
+        </a>
+      </div>
+    </div>
+
+    <!-- SIDE CARD -->
+    <div class="card mini" id="timing">
+      <div>
+        <h3 style="margin-bottom:8px; color:#0f172a;">Shop Timing</h3>
+        <div class="info">
+          <div><b>Mon–Sat:</b> 9:30 AM – 9:30 PM</div>
+          <div><b>Sunday:</b> Closed</div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:8px; color:#0f172a;">Address</h3>
+        <div class="info">
+          <div><b>SHOP:</b> 8</div>
+          <div><b>MARKET:</b> 3</div>
+          <div><b>CHITTRANJAN PARK:</b> New Delhi - 110019</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOME DELIVERY BANNER -->
+  <div class="delivery-banner">
+    <div class="left">
+      <h3>🚚 Home Delivery Available</h3>
+      <p>
+        Fast medicine delivery available in <b>CR Park</b> & <b>GK 2</b>.<br/>
+        Order easily on WhatsApp and get medicines at your doorstep.
+      </p>
+    </div>
+
+    <div class="right">
+      <a class="btn whatsapp" target="_blank"
+         href="https://wa.me/919999007926?text=Hello%20Chakrabarti%20Medical%20Store,%20I%20want%20home%20delivery%20in%20CR%20Park%20or%20GK%202.%20Please%20confirm%20availability.">
+        ✅ WhatsApp Delivery
+      </a>
+
+      <a class="btn primary" href="tel:+919999007926">
+        📞 Call Now
+      </a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section" id="about">
+    <div class="card">
+      <h3>About Us</h3>
+      <p style="line-height:1.7;">
+        <b>Chakrabarti Medical Store</b> is committed to providing quality medicines and friendly support.
+        We focus on customer satisfaction, fast service, and availability of daily healthcare essentials.
+      </p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section" id="services">
+    <h3>Our Services</h3>
+    <div class="grid3">
+      <div class="service">
+        <h4>💊 All Types of Medicines</h4>
+        <p>We provide branded & general medicines and daily healthcare products.</p>
+      </div>
+      <div class="service">
+        <h4>🚚 Home Delivery</h4>
+        <p>Fast delivery available in <b>CR Park</b> and <b>GK 2</b> area.</p>
+      </div>
+      <div class="service">
+        <h4>🩺 BP / Sugar Check</h4>
+        <p>Basic health checks available at store for quick monitoring.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOMER REVIEWS -->
+  <div class="section" id="reviews">
+    <h3>Customer Reviews</h3>
+
+    <div class="grid3">
+      <div class="service">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <p><b>Rahul Sharma</b></p>
+        <p>Very helpful staff and all medicines are available. Home delivery is fast in CR Park.</p>
+      </div>
+
+      <div class="service">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <p><b>Priya Verma</b></p>
+        <p>Good service and genuine medicines. BP check facility is also available.</p>
+      </div>
+
+      <div class="service">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <p><b>Amit Kumar</b></p>
+        <p>Best medical store in Chittaranjan Park. Quick response on WhatsApp.</p>
+      </div>
+
+      <div class="service">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <p><b>Neha Singh</b></p>
+        <p>Affordable rates and friendly behavior. Delivery in GK 2 is also smooth.</p>
+      </div>
+
+      <div class="service">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <p><b>Vikram Das</b></p>
+        <p>Good stock available. I always get my prescription medicines on time.</p>
+      </div>
+
+      <div class="service">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <p><b>Sunita Devi</b></p>
+        <p>Trusted store with genuine medicines. Staff explains properly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="card">
+      <h3>Contact</h3>
+      <p style="line-height:1.7;">
+        <b>Chakrabarti Medical Store</b><br/>
+        Shop-8, Market-3, Chittaranjan Park,<br/>
+        New Delhi 110019
+      </p>
+
+      <div class="btns" style="margin-top:12px;">
+        <a class="btn whatsapp" target="_blank"
+           href="https://wa.me/919999007926?text=Hello%20Chakrabarti%20Medical%20Store,%20Please%20share%20medicine%20availability%20and%20price.">
+          WhatsApp (9999007926)
+        </a>
+        <a class="btn whatsapp" target="_blank"
+           href="https://wa.me/919818273711?text=Hello%20Chakrabarti%20Medical%20Store,%20Please%20share%20medicine%20availability%20and%20price.">
+          WhatsApp (9818273711)
+        </a>
+        <a class="btn primary" href="tel:+919999007926">Call (9999007926)</a>
+        <a class="btn primary" href="tel:+919818273711">Call (9818273711)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="section" id="map">
+    <h3>Location on Map</h3>
+    <div class="mapbox">
+      <iframe
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Chittaranjan%20Park%20New%20Delhi%20110019&output=embed">
+      </iframe>
+    </div>
+
+    <p style="margin-top:10px; font-size:13px; color:#64748b;">
+      For exact pin location, click “Open in Google Maps” button.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  © <span id="year"></span> Chakrabarti Medical Store • CR Park, New Delhi
+</footer>
+
+<!-- Floating Buttons -->
+<div class="floating">
+  <a class="float-btn wa" target="_blank"
+     href="https://wa.me/919999007926?text=Hello%20Chakrabarti%20Medical%20Store,%20I%20want%20to%20order%20medicine.">
+    WA
+  </a>
+  <a class="float-btn call" href="tel:+919999007926">📞</a>
+</div>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
+
+</body>
+</html>
